@@ -14,7 +14,7 @@ TEST(CMOCK_TEST, using_real_function) {
 
 	EXPECT_FUNCTION_CALL(mock, (max_range)).WillOnce(Invoke(MOCK_LIBRANDOM::real));
 
-	EXPECT_GE(max_range, generate_random_number(max_range));
+	EXPECT_GE(max_range, get_number(max_range));
 }
 
 TEST(CMOCK_TEST, using_mock_function) {
@@ -24,5 +24,5 @@ TEST(CMOCK_TEST, using_mock_function) {
 
 	EXPECT_FUNCTION_CALL(mock, (max_range)).WillOnce(Return(expect_result));
 
-	EXPECT_EQ(expect_result, generate_random_number(max_range));
+	EXPECT_EQ(expect_result, get_number(max_range));
 }

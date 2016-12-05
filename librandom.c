@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <time.h>
 
+int get_number(int max_range) {
+	return generate_random_number(max_range);
+}
+
 int generate_random_number(int max_range) {
 	int randomValue = 0;
 
